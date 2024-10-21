@@ -13,20 +13,31 @@
     type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="CSS/footer.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
   <title>Serene Sips Café</title>
 </head>
 
 <body>
   <!-- Navigation bar -->
-  <nav class="nav-bar">
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#about-us">About Us</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#login">Login</a></li>
-    </ul>
-  </nav>
+<nav class="nav-bar">
+  <div class="logo">
+    <h1>Serene Sips</h1>
+  </div>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about-us">About Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#login">Login</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+</nav>
+
 
   <!-- Hero Section / Main Section -->
   <section id="hero">
@@ -155,7 +166,44 @@
     </div>
   </section>
 
-  <!-- Order Section -->
+  <!-- Order & Contact Section -->
+  <section id="order-contact">
+    <div class="order-contact-container">
+      <h2>Order Your Coffee or Contact Us</h2>
+      <p>
+        We’d love to hear from you! Whether you want to place an order or have questions, fill out the form below.
+      </p>
+      <form action="#" method="post" class="order-contact-form">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email address">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+        </div>
+        <div class="form-group">
+          <label for="size">Order Size:</label>
+          <select id="size" name="size">
+            <option value="" disabled selected>Select Size</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" rows="4" placeholder="Any special requests or questions?"></textarea>
+        </div>
+        <button type="submit" class="order-button">Place Order / Send Message</button>
+      </form>
+    </div>
+  </section>
+
 
   <!-- About Us Section -->
   <section id="about-us">
@@ -185,35 +233,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="contact-container">
-      <h2>Contact Us</h2>
-      <p>
-        We'd love to hear from you! Reach out to us with any questions,
-        feedback, or special requests.
-      </p>
-
-      <!-- Contact Form -->
-      <form action="submit_form.php" method="post" class="contact-form">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required /> <br />
-        <br />
-
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required /> <br />
-        <br />
-
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <br />
-        <br />
-
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
-
   <!-- Location & Hours Section -->
   <section id="location-hours">
     <div class="location-hours-container">
@@ -223,7 +242,8 @@
       <div class="location">
         <h3>Headquarters</h3>
         <p>123 Main St, Anytown, USA</p>
-        <p>Open 24/7</p>
+        <p>Open 24/7, ready to serve you at any time! Whether you're looking for a cozy spot to enjoy your coffee or a
+          quick grab-and-go, we've got you covered.</p>
         <!-- Embedded Google Map -->
         <div class="map-container">
           <iframe
@@ -236,13 +256,16 @@
       <div class="hours">
         <div class="hours-text">
           <p>
-            <u> Our Shop's opening Time: </u> <br>
-            Monday - Friday: 10AM - 9PM <br>
-            Saturday : 10AM - 8PM <br>
-            Sunday: Closed
+            <u> Our Shop's Opening Time: </u><br>
+            Monday - Friday: 10AM - 9PM<br>
+            Saturday: 10AM - 8PM<br>
+            Sunday: Closed<br>
+            <br>
+            We strive to create a welcoming atmosphere for our customers. Come visit us during our operating hours, and
+            let us help you start your day with a refreshing cup of coffee!
           </p>
         </div>
-        <canvas id="openingHoursCanvas" width="400" height="300"></canvas>
+        <canvas id="openingHoursCanvas" width="400" height="200"></canvas>
       </div>
     </div>
   </section>
@@ -313,35 +336,34 @@
     </div>
   </section>
 
-
   <!-- Scroll Button -->
   <button class="scroll-top-btn" id="top-btn" aria-label="Scroll to top">
     &uparrow;
   </button>
 
-  <!-- Footer Section  -->
   <!-- Footer Section -->
-<footer>
-  <div class="footer-content">
-    <!-- Copyright Notice -->
-    <p>&copy; 2024, Serene Sips Café. All Rights Reserved.</p>
-    <!-- Social Media Links -->
-    <p class="social-media">
-      <a href="https://www.facebook.com/serene.sips.cafe/" target="_blank">Facebook</a> |
-      <a href="https://www.instagram.com/serene_sips_cafe/" target="_blank">Instagram</a> |
-      <a href="https://twitter.com/serene_sips_cafe/" target="_blank">Twitter</a>
-    </p>
-    <!-- Policy Links -->
-    <p class="policy-links">
-      <a href="privacy_policy.html">Privacy Policy</a> |
-      <a href="terms_of_service.html">Terms of Service</a>
-    </p>
-  </div>
-</footer>
+  <footer>
+    <div class="footer-content">
+      <!-- Copyright Notice -->
+      <p>Serene Sips Café &copy; 2024. All Rights Reserved.</p>
+      <!-- Social Media Links -->
+      <p class="social-media">
+        <a href="https://www.facebook.com/serene.sips.cafe/" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com/serene_sips_cafe/" target="_blank">Instagram</a> |
+        <a href="https://twitter.com/serene_sips_cafe/" target="_blank">Twitter</a>
+      </p>
+      <!-- Policy Links -->
+      <p class="policy-links">
+        <a href="privacy_policy.html">Privacy Policy</a> |
+        <a href="terms_of_service.html">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
 
-  
+
   <script src="JavaScript/canvas.js"></script>
   <script src="JavaScript/scrollButton.js"></script>
+  <script src="JavaScript/hamburgerMenu.js"></script>
 </body>
 
 </html>

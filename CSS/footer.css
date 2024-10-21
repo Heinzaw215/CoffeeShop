@@ -1,0 +1,31 @@
+/* Footer Styling */
+footer {
+    background-color: #333;          /* Dark background color */
+    color: #fff;                     /* White text color */
+    padding: 20px 0;                 /* Padding for top and bottom */
+    text-align: center;              /* Centered text alignment */
+  }
+  
+  /* Container for Footer Content */
+  .footer-content {
+    max-width: 800px;                /* Limit the footer content width */
+    margin: 0 auto;                  /* Center the content horizontally */
+  }
+  
+  /* Footer Paragraphs */
+  footer p {
+    margin: 10px 0;                  /* Consistent vertical spacing */
+  }
+  
+  /* Footer Links */
+  footer a {
+    color: #f00;                     /* Red color for links */
+    text-decoration: none;           /* Remove underline */
+    transition: color 0.3s ease;     /* Smooth transition for color changes */
+  }
+  
+  /* Hover and Focus State for Links */
+  footer a:hover, footer a:focus {
+    text-decoration: underline;      /* Underline on hover */
+    color: #f90;                     /* Change color to orange on hover */
+  }

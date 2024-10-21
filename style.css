@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-/* All Header Setting */
-/* h1, h2, h3 {    
-    text-decoration: underline rgb(224, 134, 9);
-} */
-
 /* Hero Section */
 #hero {
   background-image: url("images/Background.jpg");
@@ -59,11 +54,18 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px; /* Added padding for better spacing */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000; /* Ensures the navbar is on top */
+}
+
+.nav-bar .logo {
+  color: #fff; /* Logo text color */
+  font-size: 24px; /* Size of logo text */
+  font-weight: bold; /* Bold logo text */
 }
 
 .nav-bar ul {
@@ -74,19 +76,58 @@
 }
 
 .nav-bar li {
-  margin-inline: 20px;
+  margin-inline: 20px; /* Space between menu items */
 }
 
 .nav-bar a {
   color: #fff;
   text-decoration: none;
   padding: 10px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Added background transition */
+  border-radius: 5px; /* Rounded corners for hover effect */
 }
 
 .nav-bar a:hover {
-  color: #f00;
+  color: #fff; /* Text color on hover */
+  background-color: #f00; /* Background color on hover */
 }
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  height: 4px;
+  width: 25px;
+  background-color: #fff; /* Color of the hamburger icon */
+  margin: 3px 0; /* Space between bars */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-bar ul {
+    display: none; /* Hide the menu by default on mobile */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Position below the navbar */
+    left: 0;
+    background-color: #333; /* Background color for dropdown */
+    padding: 10px 0;
+  }
+
+  .nav-bar ul.show {
+    display: flex; /* Show the menu when active */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
+}
+
 
 /* Menu Section */
 #menu {
@@ -221,10 +262,13 @@
 }
 
 
-/* Location & Hours Section */
+/* Location & Hours Section Styling */
 #location-hours {
-  padding: 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 40px 20px;        /* Increased padding for more space */
   text-align: center;
+  border-radius: 10px;       /* Rounded corners for the section */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 #location-hours h2 {
@@ -233,106 +277,75 @@
   margin-bottom: 20px;
 }
 
+/* Paragraph Styling */
 #location-hours p {
   color: #666;
   font-size: 18px;
   line-height: 1.5;
 }
 
+/* Layout for Location and Hours */
+.location-hours-container {
+  display: flex;
+  flex-direction: column;    /* Stack sections vertically */
+  gap: 20px;                 /* Space between items */
+  align-items: center;       /* Center items */
+}
+
+/* Styling for Location and Hours Boxes */
+.location, .hours {
+  border: 1px solid #ccc;
+  background-color: #fff;    /* White background for contrast */
+  padding: 20px;
+  width: 100%;               /* Full width */
+  max-width: 600px;          /* Limit maximum width */
+  border-radius: 8px;        /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Additional Styling for Hours Section */
 .hours {
   display: flex;
-  text-align: center;
+  flex-direction: column;    /* Stack content vertically */
+  align-items: center;       /* Center content */
   margin: 20px 0;
   border: 2px dashed #ccc;
 }
 
-.hours canvas {
-  text-align: right;
-}
-
+/* Map Container Styling */
 #map-container {
   text-align: center;
   margin-top: 20px;
 }
 
+/* Embedded Map Styling */
 #map-container iframe {
   width: 100%;
+  max-width: 600px;          /* Limit map's maximum width */
   height: 300px;
   border: none;
+  border-radius: 8px;        /* Rounded corners for the map */
 }
 
+/* Canvas Styling */
 #openingHoursCanvas {
   border: 1px solid #ccc;
   border-radius: 8px;
+  margin-top: 20px;
+  width: 100%;               /* Make canvas responsive */
+  max-width: 400px;         /* Limit maximum width */
+  height: 200px;            /* Set a fixed height for the canvas */
 }
 
-/* About Us Section */
-#about-us {
-  padding: 16px;
-  text-align: center;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .location-hours-container {
+    padding: 20px;           /* Reduced padding on smaller screens */
+  }
+
+  #map-container iframe {
+    width: 100%;
+    height: 250px;           /* Reduce height for smaller screens */
+  }
 }
 
-#about-us h2 {
-  color: #333;
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-#about-us pre {
-  color: #666;
-  font-size: 20px;
-  line-height: 1.5;
-  white-space: pre-wrap;
-}
-
-/* Scroll Button */
-.scroll-top-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #eb830c;
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  font-size: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.scroll-top-btn:hover {
-  background-color: #0056b3;
-}
-
-.scroll-top-btn.show {
-  opacity: 1;
-}
-
-
-/* Footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-footer p {
-  margin: 0;
-}
-
-footer a {
-  color: #f00;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  text-decoration: underline;
-  color: #f90;
-}
