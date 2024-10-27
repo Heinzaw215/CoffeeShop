@@ -1,0 +1,87 @@
+/* Location & Hours Section Styling */
+#location-hours {
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 40px 20px;        /* Increased padding for more space */
+  text-align: center;
+  border-radius: 10px;       /* Rounded corners for the section */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#location-hours h2 {
+  color: #333;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Paragraph Styling */
+#location-hours p {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Layout for Location and Hours */
+.location-hours-container {
+  display: flex;
+  flex-direction: column;    /* Stack sections vertically */
+  gap: 20px;                 /* Space between items */
+  align-items: center;       /* Center items */
+}
+
+/* Styling for Location and Hours Boxes */
+.location, .hours {
+  border: 1px solid #ccc;
+  background-color: #fff;    /* White background for contrast */
+  padding: 20px;
+  width: 100%;               /* Full width */
+  max-width: 600px;          /* Limit maximum width */
+  border-radius: 8px;        /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Additional Styling for Hours Section */
+.hours {
+  display: flex;
+  flex-direction: column;    /* Stack content vertically */
+  align-items: center;       /* Center content */
+  margin: 20px 0;
+  border: 2px dashed #ccc;
+}
+
+/* Map Container Styling */
+#map-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Embedded Map Styling */
+#map-container iframe {
+  width: 100%;
+  max-width: 600px;          /* Limit map's maximum width */
+  height: 300px;
+  border: none;
+  border-radius: 8px;        /* Rounded corners for the map */
+}
+
+/* Canvas Styling */
+#openingHoursCanvas {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+  width: 100%;               /* Make canvas responsive */
+  max-width: 400px;         /* Limit maximum width */
+  height: 200px;            /* Set a fixed height for the canvas */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .location-hours-container {
+    padding: 20px;           /* Reduced padding on smaller screens */
+  }
+
+  #map-container iframe {
+    width: 100%;
+    height: 250px;           /* Reduce height for smaller screens */
+  }
+}
+

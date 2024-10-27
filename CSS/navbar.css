@@ -1,0 +1,59 @@
+/* Navigation Bar */
+.nav-bar {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px; /* Added padding for better spacing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensures the navbar is on top */
+  }
+  
+  .nav-bar .logo {
+    color: #fff; /* Logo text color */
+    font-size: 24px; /* Size of logo text */
+    font-weight: bold; /* Bold logo text */
+  }
+  
+  .nav-bar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-bar li {
+    margin-inline: 20px; /* Space between menu items */
+  }
+  
+  .nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Added background transition */
+    border-radius: 5px; /* Rounded corners for hover effect */
+  }
+  
+  .nav-bar a:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #f00; /* Background color on hover */
+  }
+  
+  /* Hamburger menu styles */
+  .hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger .bar {
+    height: 4px;
+    width: 25px;
+    background-color: #fff; /* Color of the hamburger icon */
+    margin: 3px 0; /* Space between bars */
+  }
+  

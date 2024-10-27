@@ -1,11 +1,4 @@
 /* Responsive Styling */
-@media (max-width: 600px) {
-    footer {
-      font-size: 14px;               /* Reduce font size for smaller screens */
-    }
-  }
+@media screen and (max-width: 768px) {
   
-  /* Additional Styling for Accessibility */
-  footer a:focus {
-    outline: 2px solid #f90;         /* Outline for focused links */
-  }
+}

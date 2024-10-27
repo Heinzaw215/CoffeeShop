@@ -1,351 +1,43 @@
-/* All Section */
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Merriweather", serif;
-  box-sizing: border-box;
-}
-
-/* Hero Section */
-#hero {
-  background-image: url("images/Background.jpg");
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#hero .hero-text {
-  margin-top: 20px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 24px;
-}
-
-#hero h1 {
-  font-size: 50px;
-  text-align: center;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-#hero p {
-  color: #fff;
-  font-size: 18px;
-  text-align: center;
-}
-
-#hero a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-  transition: color 0.3s ease;
-}
-
-#hero a:hover {
-  color: #f00;
-}
-
-/* Navigation Bar */
-.nav-bar {
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 20px; /* Added padding for better spacing */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000; /* Ensures the navbar is on top */
-}
-
-.nav-bar .logo {
-  color: #fff; /* Logo text color */
-  font-size: 24px; /* Size of logo text */
-  font-weight: bold; /* Bold logo text */
-}
-
-.nav-bar ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-bar li {
-  margin-inline: 20px; /* Space between menu items */
-}
-
-.nav-bar a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-  transition: color 0.3s ease, background-color 0.3s ease; /* Added background transition */
-  border-radius: 5px; /* Rounded corners for hover effect */
-}
-
-.nav-bar a:hover {
-  color: #fff; /* Text color on hover */
-  background-color: #f00; /* Background color on hover */
-}
-
-/* Hamburger menu styles */
-.hamburger {
-  display: none; /* Hidden by default */
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger .bar {
-  height: 4px;
-  width: 25px;
-  background-color: #fff; /* Color of the hamburger icon */
-  margin: 3px 0; /* Space between bars */
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .nav-bar ul {
-    display: none; /* Hide the menu by default on mobile */
-    flex-direction: column; /* Stack items vertically */
-    width: 100%;
-    position: absolute;
-    top: 60px; /* Position below the navbar */
-    left: 0;
-    background-color: #333; /* Background color for dropdown */
-    padding: 10px 0;
-  }
-
-  .nav-bar ul.show {
-    display: flex; /* Show the menu when active */
-  }
-
-  .hamburger {
-    display: flex; /* Show hamburger on mobile */
-  }
-}
-
-
-/* Menu Section */
-#menu {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px;
-  margin: 50px auto;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
 }
 
 .menu-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.menu-container h2 {
-  color: #333;
-  font-size: 40px;
-  margin-bottom: 10px;
-  font-weight: 700;
-  text-decoration: underline rgb(236, 125, 8);
-
+.menu-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
 }
 
-.menu-container h3 {
-  text-align: left;
-  text-decoration: underline rgb(236, 125, 8);
-  font-size: 25px;
+.menu-item:last-child {
+    border-bottom: none;
 }
 
-.menu-container img {
-  max-width: 100%;
-  height: auto;
-  margin: 0px auto 20px;
+.menu-item h2 {
+    margin: 0;
+    font-size: 18px;
 }
 
-.menu-container li {
-  border: 1px solid black;
-  list-style: none;
+.menu-item p {
+    margin: 5px 0;
+    color: #666;
 }
 
-.menu-container ul {
-  display: flex;
-  flex-wrap: warp;
-  flex-direction: row;
-  gap: 20px;
+.price {
+    color: #28a745;
+    font-weight: bold;
 }
 
-/* Testimonials Section */
-/* Testimonial Section Styling */
-#testimonial {
-  background-color: #f9f9f9;
-  padding: 50px 20px;
-  text-align: center;
+.out-of-stock {
+    color: red;
 }
-
-.testimonial-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.testimonial-container h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.testimonials {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.testimonial-item {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  margin-bottom: 30px;
-  max-width: 600px;
-  text-align: center;
-}
-
-.testimonial-quote {
-  font-style: italic;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.testimonial-image {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 15px;
-}
-
-.testimonial-name {
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.testimonial-role {
-  color: #777;
-  margin-bottom: 15px;
-}
-
-.testimonial-rating {
-  color: #ff9800;
-}
-
-.fa-star {
-  font-size: 18px;
-}
-
-.checked {
-  color: #ff9800;
-}
-
-/* Responsive Styling */
-@media (max-width: 600px) {
-  .testimonial-item {
-    padding: 15px;
-  }
-}
-
-
-/* Location & Hours Section Styling */
-#location-hours {
-  background-color: #f9f9f9; /* Light background for contrast */
-  padding: 40px 20px;        /* Increased padding for more space */
-  text-align: center;
-  border-radius: 10px;       /* Rounded corners for the section */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-#location-hours h2 {
-  color: #333;
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-/* Paragraph Styling */
-#location-hours p {
-  color: #666;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-/* Layout for Location and Hours */
-.location-hours-container {
-  display: flex;
-  flex-direction: column;    /* Stack sections vertically */
-  gap: 20px;                 /* Space between items */
-  align-items: center;       /* Center items */
-}
-
-/* Styling for Location and Hours Boxes */
-.location, .hours {
-  border: 1px solid #ccc;
-  background-color: #fff;    /* White background for contrast */
-  padding: 20px;
-  width: 100%;               /* Full width */
-  max-width: 600px;          /* Limit maximum width */
-  border-radius: 8px;        /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
-}
-
-/* Additional Styling for Hours Section */
-.hours {
-  display: flex;
-  flex-direction: column;    /* Stack content vertically */
-  align-items: center;       /* Center content */
-  margin: 20px 0;
-  border: 2px dashed #ccc;
-}
-
-/* Map Container Styling */
-#map-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* Embedded Map Styling */
-#map-container iframe {
-  width: 100%;
-  max-width: 600px;          /* Limit map's maximum width */
-  height: 300px;
-  border: none;
-  border-radius: 8px;        /* Rounded corners for the map */
-}
-
-/* Canvas Styling */
-#openingHoursCanvas {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-top: 20px;
-  width: 100%;               /* Make canvas responsive */
-  max-width: 400px;         /* Limit maximum width */
-  height: 200px;            /* Set a fixed height for the canvas */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .location-hours-container {
-    padding: 20px;           /* Reduced padding on smaller screens */
-  }
-
-  #map-container iframe {
-    width: 100%;
-    height: 250px;           /* Reduce height for smaller screens */
-  }
-}
-
