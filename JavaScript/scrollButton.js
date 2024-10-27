@@ -1,15 +1,19 @@
-// Add smooth scrolling to the top
-document.getElementById('top-btn').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+// Get the button
+const topButton = document.getElementById("top-btn");
 
-// Show or hide button on scroll
-window.addEventListener('scroll', () => {
-    const topBtn = document.getElementById('top-btn');
-    if (window.scrollY > 300) {
-        topBtn.classList.add('show');
+// Show the button when the user scrolls down 100px from the top of the document
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        topButton.classList.add("show");
     } else {
-        topBtn.classList.remove('show');
+        topButton.classList.remove("show");
     }
-});
+};
 
+// Scroll to the top when the button is clicked
+topButton.onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Smooth scroll
+    });
+};

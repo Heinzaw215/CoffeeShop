@@ -1,0 +1,30 @@
+/* Scroll Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #eb830c;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 60px; /* Slightly larger */
+  height: 60px; /* Slightly larger */
+  cursor: pointer;
+  font-size: 28px; /* Larger font size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease; /* Add transition for background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.scroll-top-btn:hover {
+  background-color: #0056b3; /* Change hover color */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.scroll-top-btn.show {
+  opacity: 1;
+}
